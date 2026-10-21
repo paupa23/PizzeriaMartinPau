@@ -41,4 +41,13 @@ def mostrar_carrito(carrito):
 
 
 def calcular_total_carrito(carrito):
-    pass
+    total = 0
+
+    for item in carrito:
+        cantidad = item["cantidad"]
+        precio = item["precio"]
+
+        subtotal = cantidad * precio
+        total += subtotal
+
+    return round(total, 2)
