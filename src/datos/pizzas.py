@@ -204,6 +204,22 @@ pizzas = {
 }
 }
 
+# Peso aproximado de una unidad para ingredientes que se
+# compran por kilogramo, pero que algunas recetas expresan
+# como unidades individuales.
+#
+# Estos valores son estimaciones que podremos ajustar.
+
+peso_unidad_g = {
+    "champiñones": 10,
+    "alcachofa": 170,
+    "olivas_negras": 4,
+    "cebolla_blanca": 150,
+    "cebolla_morada": 150,
+    "berenjena": 400
+}
+
+
 # Función para obtener la lista de ingredientes de todas las pizzas con pizzas.values()
 def obtener_ingredientes(pizzas):
     # El conjunto {...} elimina duplicados
@@ -285,7 +301,8 @@ unidades_ingredientes = {
     },
 
     "Cheetos": {
-        "bolsa_cheetos": "bolsa"
+        "bolsa_cheetos": "unidad"
     }
 }
+
 

@@ -65,4 +65,30 @@ precios_ingredientes = {
     # 7. Otros ingredientes
     "huevo": {"precio": 0.24, "unidad": "unidad"},
     "bolsa_cheetos": {"precio": 1.89, "unidad": "bolsa"},
-}  
+}
+
+
+def calcular_coste_ingrediente(ingrediente, cantidad):
+    # Obtenemos el precio y la unidad del ingrediente
+    datos = precios_ingredientes[ingrediente]
+
+    precio = datos["precio"]
+    unidad = datos["unidad"]
+
+    # Si el ingrediente se compra por kilogramo,
+    # convertimos los gramos de la receta a kilogramos.
+    if unidad == "kg":
+        coste = (cantidad / 1000) * precio
+
+    # Si se compra por litro, convertimos mililitros a litros.
+    elif unidad == "l":
+        coste = (cantidad / 1000) * precio
+
+    # Si se compra por unidades, multiplicamos directamente.
+    elif unidad == "unidad":
+        coste = cantidad * precio
+
+    else:
+        raise ValueError(f"Unidad no reconocida: {unidad}")
+
+    return coste
