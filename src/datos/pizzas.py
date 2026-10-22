@@ -1,7 +1,7 @@
 pizzas = {
 "Margarita": {
 "masa": 220,
-"tomate": 100,
+"salsa_tomate": 100,
 "mozzarella": 200,
 "albahaca": 4,
 "aceite": 15,
@@ -11,7 +11,7 @@ pizzas = {
 
 "Hawaiana": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mozzarella": 200,
     "jamon_cocido": 150,
     "piña": 100,
@@ -21,7 +21,7 @@ pizzas = {
 
 "Cuatro_quesos": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mozzarella": 150,
     "queso_azul": 100,
     "parmesano": 100,
@@ -40,11 +40,11 @@ pizzas = {
 
 "Caprichosa": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mozzarella": 120,
     "jamon_cocido": 100,
     "champiñones": 3,
-    "alcachofa": 1,
+    "alcachofa": 170,
     "olivas_negras": 8,
     "aceite": 15,
     "oregano": 50
@@ -52,7 +52,7 @@ pizzas = {
 
 "Cuatro_estaciones": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mozzarella": 120,
     "champiñones": 3,
     "alcachofa": 3,
@@ -63,7 +63,7 @@ pizzas = {
 
 "Barbacoa": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "salsa_barbacoa": 40,
     "mozzarella": 120,
     "pechuga_pollo": 100,
@@ -99,7 +99,7 @@ pizzas = {
 
 "Carnivora": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mezcla_quesos": 180,
     "carne_picada_vacuno": 90,
     "pechuga_pollo": 80,
@@ -110,7 +110,7 @@ pizzas = {
 
 "Kebab": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mozzarella": 100,
     "pollo_marinado": 40,
     "cebolla_blanca": 1,
@@ -121,7 +121,7 @@ pizzas = {
 
 "Bacon": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mozzarella": 100,
     "bacon": 20,
     "salsa_barbacoa": 30
@@ -129,14 +129,14 @@ pizzas = {
 
 "Pepperoni": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mozzarella": 100,
     "pepperoni": 40
 },
 
 "Prosciutto_funghi": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mozzarella": 100,
     "jamon_cocido": 60,
     "champiñones": 40,
@@ -145,7 +145,7 @@ pizzas = {
 
 "Napolitana": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mozzarella": 100,
     "albahaca": 50,
     "alcaparras": 40,
@@ -155,17 +155,17 @@ pizzas = {
 
 "Vegetal": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mozzarella": 100,
     "cebolla_blanca": 1,
-    "pimiento": 1,
+    "pimiento_rojo": 280,
     "champiñones": 50,
     "olivas_negras": 40
 },
 
 "Marinara": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mozzarella": 100,
     "gambas": 20,
     "calamar": 20,
@@ -176,7 +176,7 @@ pizzas = {
 
 "Jamon_queso": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mozzarella": 100,
     "jamon_cocido": 80,
     "aceite": 15
@@ -184,10 +184,10 @@ pizzas = {
 
 "Melanzane": {
     "masa": 220,
-    "tomate": 100,
+    "salsa_tomate": 100,
     "mozzarella": 100,
     "berenjena": 1,
-    "pimiento": 1,
+    "pimiento_verde": 250,
     "albahaca": 50,
     "rucula": 50,
     "vinagre": 1,
@@ -204,6 +204,22 @@ pizzas = {
 }
 }
 
+# Peso aproximado de una unidad para ingredientes que se
+# compran por kilogramo, pero que algunas recetas expresan
+# como unidades individuales.
+#
+# Estos valores son estimaciones que podremos ajustar.
+
+peso_unidad_g = {
+    "champiñones": 10,
+    "alcachofa": 170,
+    "olivas_negras": 4,
+    "cebolla_blanca": 150,
+    "cebolla_morada": 150,
+    "berenjena": 400
+}
+
+
 # Función para obtener la lista de ingredientes de todas las pizzas con pizzas.values()
 def obtener_ingredientes(pizzas):
     # El conjunto {...} elimina duplicados
@@ -216,5 +232,77 @@ def obtener_ingredientes(pizzas):
 # Catálogo general de ingredientes, generado automáticamente
 ingredientes = obtener_ingredientes(pizzas)
 
-if __name__ == "__main__":
-    print(ingredientes)
+print(ingredientes)
+
+
+# Diccionario que indica la unidad de medida de los ingredientes
+# cuando no podemos deducirla directamente de la receta.
+#
+# Permite distinguir, por ejemplo, entre 3 champiñones y 40 gramos
+# de champiñones, aunque ambos utilicen la misma clave: "champiñones".
+#
+# ¿Por qué lo hacemos?
+# Porque en precios_ingredientes los champiñones tienen un precio
+# por kilogramo. Para calcular su coste necesitamos saber si la
+# cantidad de la receta está expresada en gramos o en unidades.
+#
+# Las unidades utilizadas serán:
+# "g"      = gramos
+# "ml"     = mililitros
+# "unidad" = unidades individuales
+# "bolsa"  = bolsas
+
+unidades_ingredientes = {
+    "Caprichosa": {
+        "champiñones": "unidad",
+        "alcachofa": "g",
+        "olivas_negras": "unidad"
+    },
+
+    "Cuatro_estaciones": {
+        "champiñones": "unidad",
+        "alcachofa": "unidad",
+        "olivas_negras": "unidad"
+    },
+
+    "Carbonara": {
+        "champiñones": "unidad",
+        "cebolla_blanca": "unidad",
+        "huevo": "unidad"
+    },
+
+    "Barbacoa": {
+        "cebolla_morada": "unidad"
+    },
+
+    "Kebab": {
+        "cebolla_blanca": "unidad"
+    },
+
+    "Prosciutto_funghi": {
+        "champiñones": "g"
+    },
+
+    "Napolitana": {
+        "olivas_negras": "g"
+    },
+
+    "Vegetal": {
+        "cebolla_blanca": "unidad",
+        "pimiento_rojo": "g",
+        "champiñones": "g",
+        "olivas_negras": "g"
+    },
+
+    "Melanzane": {
+        "berenjena": "unidad",
+        "pimiento_verde": "g",
+        "vinagre": "ml"
+    },
+
+    "Cheetos": {
+        "bolsa_cheetos": "unidad"
+    }
+}
+
+
