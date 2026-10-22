@@ -1,43 +1,219 @@
 pizzas = {
-    "Margarita": ["masa", "tomate", "mozzarella", "albahaca", "aceite", "pimienta", "sal"],
-    
-    "Hawaina": ["masa", "tomate", "mozzarella", "jamon_cocido", "piña", "aceite", "oregano"],
-    
-    "Cuatro_quesos": ["masa", "tomate", "mozzarella", "queso_azul","parmesano", "queso_suave", "aceite"],
-    
-    "Cheetos": ["masa", "mozzarella","nata","cheddar", "bacon", "bolsa_cheetos", "aceite"],
-    
-    "Caprichosa": ["masa", "tomate", "mozzarella", "jamon_cocido", "champiñones", "alcalchofa", "olivas_negras", "aceite", "oregano"],
-    
-    "Cuatro_estaciones": ["masa", "tomate", "mozzarella", "champiñones", "alcalchofa", "olivas_negras", "jamon_cocido", "aceite"],
+"Margarita": {
+"masa": 220,
+"tomate": 100,
+"mozzarella": 200,
+"albahaca": 4,
+"aceite": 15,
+"pimienta": 2,
+"sal": 3
+},
 
-    "Barbacoa": ["masa", "tomate", "mozzarella", "salsa_barbacoa", "pollo", "carne_picada", "bacon", "cebolla_morada", "aceite"],
+"Hawaiana": {
+    "masa": 220,
+    "tomate": 100,
+    "mozzarella": 200,
+    "jamon_cocido": 150,
+    "piña": 100,
+    "aceite": 15,
+    "oregano": 50
+},
 
-    "Carbonara": ["masa", "nata", "mozzarella", "bacon", "cebolla_blanca", "champiñones", "huevo", "parmesano", "pimienta", "aceite"],
+"Cuatro_quesos": {
+    "masa": 220,
+    "tomate": 100,
+    "mozzarella": 150,
+    "queso_azul": 100,
+    "parmesano": 100,
+    "queso_suave": 100,
+    "aceite": 15
+},
 
-    "Burger": ["masa", "mozzarella", "salsa_barbacoa", "cheddar", "carne_picada", "bacon", "salsa_burger", "aceite"],
+"Cheetos": {
+    "nata": 100,
+    "mozzarella": 120,
+    "cheddar": 50,
+    "bacon": 70,
+    "bolsa_cheetos": 0.5,
+    "aceite": 15
+},
 
-    "Carnivora": ["masa", "tomate", "mezcla_quesos", "carne_picada", "pollo", "jamon_cocido", "pepperoni", "aceite"],
+"Caprichosa": {
+    "masa": 220,
+    "tomate": 100,
+    "mozzarella": 120,
+    "jamon_cocido": 100,
+    "champiñones": 3,
+    "alcachofa": 1,
+    "olivas_negras": 8,
+    "aceite": 15,
+    "oregano": 50
+},
 
-    "Kebab": ["masa", "tomate", "mozzarella", "pollo", "cebolla_blanca", "salsa_kebab", "especias_kebab", "oregano"],
+"Cuatro_estaciones": {
+    "masa": 220,
+    "tomate": 100,
+    "mozzarella": 120,
+    "champiñones": 3,
+    "alcachofa": 3,
+    "olivas_negras": 10,
+    "jamon_cocido": 100,
+    "aceite": 15
+},
 
-    "Bacon": ["masa", "tomate", "mozzarella", "bacon", "salsa_barbacoa"],
+"Barbacoa": {
+    "masa": 220,
+    "tomate": 100,
+    "salsa_barbacoa": 40,
+    "mozzarella": 120,
+    "pechuga_pollo": 100,
+    "carne_picada_vacuno": 100,
+    "bacon": 50,
+    "cebolla_morada": 0.5,
+    "aceite": 15
+},
 
-    "Pepperoni": ["masa", "tomate", "mozzarella", "pepperoni"],
+"Carbonara": {
+    "masa": 220,
+    "nata": 100,
+    "mozzarella": 120,
+    "bacon": 100,
+    "cebolla_blanca": 0.5,
+    "champiñones": 3,
+    "huevo": 2,
+    "parmesano": 30,
+    "pimienta": 2,
+    "aceite": 15
+},
 
-    "Prosciutto_funghi": ["masa", "tomate", "mozzarella", "jamon_cocido", "champiñones", "oregano"],
+"Burger": {
+    "masa": 220,
+    "salsa_barbacoa": 20,
+    "mozzarella": 120,
+    "cheddar": 60,
+    "carne_picada_mixta": 100,
+    "bacon": 50,
+    "salsa_burger": 25,
+    "aceite": 15
+},
 
-    "Napolitana": ["masa", "tomate", "mozzarella", "albahaca", "alcaparras", "olivas_negras", "anchoas"],
+"Carnivora": {
+    "masa": 220,
+    "tomate": 100,
+    "mezcla_quesos": 180,
+    "carne_picada_vacuno": 90,
+    "pechuga_pollo": 80,
+    "jamon_cocido": 70,
+    "pepperoni": 14,
+    "aceite": 15
+},
 
-    "Vegetal": ["masa", "tomate", "mozzarella", "cebolla_blanca", "pimiento", "champiñones", "olivas_negras"],
+"Kebab": {
+    "masa": 220,
+    "tomate": 100,
+    "mozzarella": 100,
+    "pollo_marinado": 40,
+    "cebolla_blanca": 1,
+    "especias_kebab": 20,
+    "oregano": 50,
+    "salsa_kebab": 30
+},
 
-    "Marinara": ["masa", "tomate", "mozzarella", "gambas", "calamar", "mejillones", "oregano", "perejil"],
+"Bacon": {
+    "masa": 220,
+    "tomate": 100,
+    "mozzarella": 100,
+    "bacon": 20,
+    "salsa_barbacoa": 30
+},
 
-    "Jamon_queso": ["masa", "tomate", "mozzarella", "jamon_cocido", "aceite"],
+"Pepperoni": {
+    "masa": 220,
+    "tomate": 100,
+    "mozzarella": 100,
+    "pepperoni": 40
+},
 
-    "Melanzane": ["masa", "tomate", "mozzarella", "berenjena", "pimiento", "rucula", "albahaca", "vinagre", "aceite"],
+"Prosciutto_funghi": {
+    "masa": 220,
+    "tomate": 100,
+    "mozzarella": 100,
+    "jamon_cocido": 60,
+    "champiñones": 40,
+    "oregano": 50
+},
 
-    "Pesto": ["masa", "mozzarella", "salsa_pesto", "tomates_cherry", "albahaca", "aceite"]
+"Napolitana": {
+    "masa": 220,
+    "tomate": 100,
+    "mozzarella": 100,
+    "albahaca": 50,
+    "alcaparras": 40,
+    "olivas_negras": 40,
+    "anchoas": 20
+},
+
+"Vegetal": {
+    "masa": 220,
+    "tomate": 100,
+    "mozzarella": 100,
+    "cebolla_blanca": 1,
+    "pimiento": 1,
+    "champiñones": 50,
+    "olivas_negras": 40
+},
+
+"Marinara": {
+    "masa": 220,
+    "tomate": 100,
+    "mozzarella": 100,
+    "gambas": 20,
+    "calamar": 20,
+    "mejillones": 20,
+    "oregano": 50,
+    "perejil": 40
+},
+
+"Jamon_queso": {
+    "masa": 220,
+    "tomate": 100,
+    "mozzarella": 100,
+    "jamon_cocido": 80,
+    "aceite": 15
+},
+
+"Melanzane": {
+    "masa": 220,
+    "tomate": 100,
+    "mozzarella": 100,
+    "berenjena": 1,
+    "pimiento": 1,
+    "albahaca": 50,
+    "rucula": 50,
+    "vinagre": 1,
+    "aceite": 15
+},
+
+"Pesto": {
+    "masa": 220,
+    "mozzarella": 100,
+    "salsa_pesto": 100,
+    "tomates_cherry": 20,
+    "albahaca": 50,
+    "aceite": 15
+}
 }
 
-ingredientes = ["masa", "tomate", "mozzarella", "cheddar", "queso_suave","queso_azul","mezcla_quesos", "parmesano", "nata", "jamon_cocido", "bacon", "pollo", "carne_picada", "pepperoni", "anchoas", "gambas", "calamar", "mejillones", "champiñones", "alcalchofa", "berenjena", "pimiento", "tomates_cherry", "olivas_negras", "alcaparras", "cebolla_blanca", "cebolla_morada", "huevo", "piña", "bolsa_cheetos", "albahaca", "rucula", "perejil","oregano", "vinagre", "aceite", "sal", "pimienta", "especias_kebab", "salsa_barbacoa", "salsa_burger", "salsa_kebab", "salsa_pesto"]
+# Función para obtener la lista de ingredientes de todas las pizzas con pizzas.values()
+def obtener_ingredientes(pizzas):
+    # El conjunto {...} elimina duplicados
+    return sorted({
+    ingrediente
+    for ingredientes_pizza in pizzas.values()
+    for ingrediente in ingredientes_pizza
+    })
+
+# Catálogo general de ingredientes, generado automáticamente
+ingredientes = obtener_ingredientes(pizzas)
+
+print(ingredientes)
