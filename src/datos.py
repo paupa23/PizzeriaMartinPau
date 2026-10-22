@@ -216,4 +216,5 @@ def obtener_ingredientes(pizzas):
 # Catálogo general de ingredientes, generado automáticamente
 ingredientes = obtener_ingredientes(pizzas)
 
-print(ingredientes)
+if __name__ == "__main__":
+    print(ingredientes)
