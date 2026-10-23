@@ -74,3 +74,36 @@ def aplicar_oferta(carrito, tipo_oferta, nombres_pizzas, nombres_bebidas):
     total_final = round(total_carrito - descuento, 2)
 
     return round(descuento, 2), total_final
+
+
+
+# Comprobar automaticamente todas las ofertas
+def aplicar_mejor_oferta(carrito, nombres_pizzas, nombres_bebidas):
+
+    ofertas = {
+        1: "Pizza + bebida",
+        2: "2x1 Margarita",
+        3: "Descuento del 10%"
+    }
+
+    mejor_oferta = "Sin oferta"
+    mayor_descuento = 0
+    mejor_total = calcular_total_carrito(carrito)
+
+    # Comprobar todas las ofertas disponibles
+    for numero, nombre in ofertas.items():
+
+        descuento, total = aplicar_oferta(
+            carrito,
+            numero,
+            nombres_pizzas,
+            nombres_bebidas
+        )
+
+        # Guardar la oferta que tenga mayor descuento
+        if descuento > mayor_descuento:
+            mayor_descuento = descuento
+            mejor_total = total
+            mejor_oferta = nombre
+
+    return mejor_oferta, mayor_descuento, mejor_total

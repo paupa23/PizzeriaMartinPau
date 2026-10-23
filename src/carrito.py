@@ -9,14 +9,40 @@ def agregar_producto_carrito(carrito, producto, cantidad, precio):
     return carrito
 
 
-def eliminar_producto_carrito(carrito, indice):
-    if 0 <= indice < len(carrito):
+
+def eliminar_producto_carrito(carrito, indice, cantidad=None):
+
+    if indice < 0 or indice >= len(carrito):
+        print("Error: el producto no existe.")
+        return carrito
+
+    producto = carrito[indice]
+    cantidad_actual = producto["cantidad"]
+
+    # Si no indicamos cantidad, eliminar todo el producto
+    if cantidad is None:
         carrito.pop(indice)
         print("Producto eliminado correctamente.")
+        return carrito
+
+    # Comprobar que la cantidad sea valida
+    if cantidad <= 0:
+        print("Error: la cantidad debe ser mayor que 0.")
+
+    elif cantidad > cantidad_actual:
+        print("Error: no tienes tantas unidades en el carrito.")
+
+    elif cantidad == cantidad_actual:
+        carrito.pop(indice)
+        print("Producto eliminado completamente.")
+
     else:
-        print("Error: el producto no existe.")
+        producto["cantidad"] -= cantidad
+        print(f"Se han eliminado {cantidad} unidades.")
+        print(f"Quedan {producto['cantidad']} unidades.")
 
     return carrito
+
 
 
 def mostrar_carrito(carrito):
