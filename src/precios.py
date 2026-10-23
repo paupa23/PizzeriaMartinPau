@@ -67,6 +67,18 @@ precios_ingredientes = {
     "bolsa_cheetos": {"precio": 1.89, "unidad": "bolsa"},
 }
 
+# Peso aproximado en gramos de una unidad de cada ingrediente.
+# Se utiliza cuando la receta expresa la cantidad en unidades,
+# pero el precio de compra está establecido por kilogramo.
+
+peso_unidad_g = {
+    "champiñones": 10,
+    "alcachofa": 170,
+    "olivas_negras": 4,
+    "cebolla_blanca": 150,
+    "cebolla_morada": 150,
+    "berenjena": 400
+}
 
 def calcular_coste_ingrediente(ingrediente, cantidad):
     # Obtenemos el precio y la unidad del ingrediente

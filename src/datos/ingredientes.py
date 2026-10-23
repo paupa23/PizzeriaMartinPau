@@ -1,3 +1,31 @@
+from pizzas import pizzas
+
+# Función para obtener la lista de ingredientes de todas las pizzas con pizzas.values()
+def obtener_ingredientes(pizzas):
+    # El conjunto {...} elimina duplicados
+    return sorted({
+    ingrediente
+    for ingredientes_pizza in pizzas.values()
+    for ingrediente in ingredientes_pizza
+    })
+
+# Catálogo general de ingredientes, generado automáticamente
+ingredientes = obtener_ingredientes(pizzas)
+
+print(ingredientes)
+
+
+# Diccionario que indica la unidad de medida de los ingredientes
+# cuando no podemos deducirla directamente de la receta.
+#
+# Permite distinguir, por ejemplo, entre 3 champiñones y 40 gramos
+# de champiñones, aunque ambos utilicen la misma clave: "champiñones".
+#
+# Las unidades utilizadas serán:
+# "g"      = gramos
+# "ml"     = mililitros
+# "unidad" = unidades individuales
+
 unidades_ingredientes = {
     "Caprichosa": {
         "champiñones": "unidad",
