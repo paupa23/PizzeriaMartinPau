@@ -1,4 +1,4 @@
-from pizzas import pizzas
+from src.datos.pizzas import pizzas
 
 # Función para obtener la lista de ingredientes de todas las pizzas con pizzas.values()
 def obtener_ingredientes(pizzas):
@@ -11,8 +11,6 @@ def obtener_ingredientes(pizzas):
 
 # Catálogo general de ingredientes, generado automáticamente
 ingredientes = obtener_ingredientes(pizzas)
-
-print(ingredientes)
 
 
 # Diccionario que indica la unidad de medida de los ingredientes

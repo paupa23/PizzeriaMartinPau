@@ -30,6 +30,7 @@ pizzas = {
 },
 
 "Cheetos": {
+    "masa": 220,
     "nata": 100,
     "mozzarella": 120,
     "cheddar": 50,
