@@ -8,6 +8,7 @@ from src.costes_negocio.precios_ingredientes import calcular_coste_masa
 # Unidades predeterminadas para ingredientes líquidos
 unidades_predeterminadas = {
     "aceite": "ml",
+    "nata": "ml",
     "salsa_burger": "ml",
     "salsa_kebab": "ml",
     "vinagre": "ml"
