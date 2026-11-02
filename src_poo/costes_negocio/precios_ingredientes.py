@@ -1,0 +1,85 @@
+from src_poo.datos.ingredientes import Ingrediente
+
+class CatalogoIngredientes:
+    def __init__(self):
+        self.ingredientes = {}
+
+    def agregar_ingredientes(self,nombre,precio,unidad):
+        # Creamos un objeto de la clase Ingrediente con los datos recibidos
+        ingrediente = Ingrediente(nombre,precio,unidad)
+        # Guardamos ese objeto en el diccionario self.ingredientes, utilizando su nombre como clave.
+        self.ingredientes[nombre] = ingrediente
+
+def crear_catalogo_ingredientes(self):
+    catalogo = CatalogoIngredientes()
+
+    # Ingredientes para la masa
+    catalogo.agregar_ingrediente("harina", 0.72, "kg")
+    catalogo.agregar_ingrediente("agua", 0.33, "l")
+    catalogo.agregar_ingrediente("aceite", 3.70, "l")
+    catalogo.agregar_ingrediente("levadura", 10.00, "kg")
+    catalogo.agregar_ingrediente("sal", 0.40, "kg")
+
+    # Quesos
+    catalogo.agregar_ingrediente("mozzarella", 8.00, "kg")
+    catalogo.agregar_ingrediente("cheddar", 9.75, "kg")
+    catalogo.agregar_ingrediente("gouda", 6.50, "kg")
+    catalogo.agregar_ingrediente("queso_azul", 12.78, "kg")
+    catalogo.agregar_ingrediente("parmesano", 16.50, "kg")
+    catalogo.agregar_ingrediente("queso_suave", 7.64, "kg")
+    catalogo.agregar_ingrediente("emmental", 6.37, "kg")
+    catalogo.agregar_ingrediente("havarti", 9.33, "kg")
+
+    # Lácteos
+    catalogo.agregar_ingrediente("nata", 3.08, "l")
+
+    # Carnes
+    catalogo.agregar_ingrediente("jamon_cocido", 11.25, "kg")
+    catalogo.agregar_ingrediente("bacon", 9.20, "kg")
+    catalogo.agregar_ingrediente("panceta_italiana", 15.00, "kg")
+    catalogo.agregar_ingrediente("pechuga_pollo", 7.70, "kg")
+    catalogo.agregar_ingrediente("pollo_marinado", 8.20, "kg")
+    catalogo.agregar_ingrediente("carne_picada_vacuno", 11.00, "kg")
+    catalogo.agregar_ingrediente("carne_picada_mixta", 8.20, "kg")
+    catalogo.agregar_ingrediente("pepperoni", 21.33, "kg")
+
+    # Verduras y hortalizas
+    catalogo.agregar_ingrediente("cebolla_blanca", 1.50, "kg")
+    catalogo.agregar_ingrediente("cebolla_morada", 1.40, "kg")
+    catalogo.agregar_ingrediente("champiñones", 5.56, "kg")
+    catalogo.agregar_ingrediente("alcachofa", 2.53, "kg")
+    catalogo.agregar_ingrediente("pimiento_rojo", 2.89, "kg")
+    catalogo.agregar_ingrediente("pimiento_verde", 2.80, "kg")
+    catalogo.agregar_ingrediente("tomates_cherry", 4.40, "kg")
+    catalogo.agregar_ingrediente("berenjena", 2.20, "kg")
+    catalogo.agregar_ingrediente("rucula", 17.00, "kg")
+    catalogo.agregar_ingrediente("ajo", 7.40, "kg")
+    catalogo.agregar_ingrediente("piña", 2.00, "kg")
+    catalogo.agregar_ingrediente("albahaca", 77.50, "kg")
+    catalogo.agregar_ingrediente("perejil", 23.75, "kg")
+    catalogo.agregar_ingrediente("oregano", 40.00, "kg")
+
+    # Pescados y mariscos
+    catalogo.agregar_ingrediente("gambas", 13.61, "kg")
+    catalogo.agregar_ingrediente("calamar", 15.97, "kg")
+    catalogo.agregar_ingrediente("mejillones", 9.09, "kg")
+    catalogo.agregar_ingrediente("anchoas", 17.50, "kg")
+
+    # Salsas y condimentos
+    catalogo.agregar_ingrediente("salsa_tomate", 1.25, "kg")
+    catalogo.agregar_ingrediente("salsa_barbacoa", 3.29, "kg")
+    catalogo.agregar_ingrediente("salsa_burger", 5.60, "l")
+    catalogo.agregar_ingrediente("salsa_kebab", 4.03, "l")
+    catalogo.agregar_ingrediente("salsa_pesto", 12.67, "kg")
+    catalogo.agregar_ingrediente("vinagre", 4.60, "l")
+    catalogo.agregar_ingrediente("pimienta", 18.57, "kg")
+    catalogo.agregar_ingrediente("especias_kebab", 24.19, "kg")
+    catalogo.agregar_ingrediente("olivas_negras", 12.84, "kg")
+    catalogo.agregar_ingrediente("alcaparras", 10.00, "kg")
+    catalogo.agregar_ingrediente("piñones", 50.71, "kg")
+
+    # Otros ingredientes
+    catalogo.agregar_ingrediente("huevo", 0.24, "unidad")
+    catalogo.agregar_ingrediente("bolsa_cheetos", 1.89, "unidad")
+
+    return catalogo
