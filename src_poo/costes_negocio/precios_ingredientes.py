@@ -83,3 +83,42 @@ def crear_catalogo_ingredientes(self):
     catalogo.agregar_ingrediente("bolsa_cheetos", 1.89, "unidad")
 
     return catalogo
+
+class CatalogoIngredientes:
+
+    # Constructor de la clase
+    def __init__(self):
+        self.ingredientes = {}
+
+    # Añade un ingrediente al catálogo
+    def agregar_ingrediente(self, nombre, precio, unidad):
+        ingrediente = Ingrediente(nombre, precio, unidad)
+        self.ingredientes[nombre] = ingrediente
+
+    # Busca un ingrediente por su nombre
+    def obtener_ingrediente(self, nombre):
+
+        # Comprobamos si el ingrediente existe en el catálogo
+        if nombre not in self.ingredientes:
+            raise ValueError(f"No existe el ingrediente: {nombre}")
+
+        # Devolvemos el objeto Ingrediente
+        return self.ingredientes[nombre]
+
+    # Calcula el precio medio de la mezcla de quesos
+    def calcular_coste_mezcla_quesos(self):
+
+        # Inicializamos el coste total
+        coste_total = 0
+
+        # Recorremos todos los quesos de la mezcla
+        for nombre_queso in quesos_mezcla:
+
+            # Obtenemos el queso del catálogo
+            queso = self.obtener_ingrediente(nombre_queso)
+
+            # Sumamos su precio
+            coste_total += queso.precio
+
+        # Calculamos el precio medio
+        return coste_total / len(quesos_mezcla)
