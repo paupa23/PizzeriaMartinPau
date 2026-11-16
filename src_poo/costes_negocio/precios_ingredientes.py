@@ -1,5 +1,17 @@
 from src_poo.datos.ingredientes import Ingrediente
 
+# Lista de quesos que forman la mezcla
+quesos_mezcla = [
+    "mozzarella",
+    "cheddar",
+    "gouda",
+    "queso_azul",
+    "parmesano",
+    "queso_suave",
+    "emmental",
+    "havarti",
+]
+
 class CatalogoIngredientes:
     def __init__(self):
         self.ingredientes = {}
@@ -83,3 +95,86 @@ def crear_catalogo_ingredientes(self):
     catalogo.agregar_ingrediente("bolsa_cheetos", 1.89, "unidad")
 
     return catalogo
+
+class CatalogoIngredientes:
+
+    # Constructor de la clase
+    def __init__(self):
+        self.ingredientes = {}
+
+    # Añade un ingrediente al catálogo
+    def agregar_ingrediente(self, nombre, precio, unidad):
+        ingrediente = Ingrediente(nombre, precio, unidad)
+        self.ingredientes[nombre] = ingrediente
+
+    # Busca un ingrediente por su nombre
+    def obtener_ingrediente(self, nombre):
+
+        # Comprobamos si el ingrediente existe en el catálogo
+        if nombre not in self.ingredientes:
+            raise ValueError(f"No existe el ingrediente: {nombre}")
+
+        # Devolvemos el objeto Ingrediente
+        return self.ingredientes[nombre]
+
+        # Calcula el coste de la masa utilizada en una pizza
+    def calcular_coste_masa(self):
+
+        # Coste de 250 g de harina
+        coste_harina = self.obtener_ingrediente(
+            "harina"
+        ).calcular_coste(250, "g")
+
+        # Coste de 160 ml de agua
+        coste_agua = self.obtener_ingrediente(
+            "agua"
+        ).calcular_coste(160, "ml")
+
+        # Coste de 25 ml de aceite
+        coste_aceite = self.obtener_ingrediente(
+            "aceite"
+        ).calcular_coste(25, "ml")
+
+        # Coste de 10 g de levadura
+        coste_levadura = self.obtener_ingrediente(
+            "levadura"
+        ).calcular_coste(10, "g")
+
+        # Coste de 4 g de sal
+        coste_sal = self.obtener_ingrediente(
+            "sal"
+        ).calcular_coste(4, "g")
+
+        # Calculamos el coste total de la receta de masa
+        coste_total = (
+            coste_harina
+            + coste_agua
+            + coste_aceite
+            + coste_levadura
+            + coste_sal
+        )
+
+        # La receta completa produce aproximadamente 449 g de masa
+        # Cada pizza utiliza 220 g
+        coste_pizza = coste_total * (220 / 449)
+
+        # Devolvemos el coste de la masa de una pizza
+        return coste_pizza
+
+    # Calcula el precio medio de la mezcla de quesos
+    def calcular_coste_mezcla_quesos(self):
+
+        # Inicializamos el coste total
+        coste_total = 0
+
+        # Recorremos todos los quesos de la mezcla
+        for nombre_queso in quesos_mezcla:
+
+            # Obtenemos el queso del catálogo
+            queso = self.obtener_ingrediente(nombre_queso)
+
+            # Sumamos su precio
+            coste_total += queso.precio
+
+        # Calculamos el precio medio
+        return coste_total / len(quesos_mezcla)
