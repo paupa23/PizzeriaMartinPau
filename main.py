@@ -1,5 +1,3 @@
-"""Punto de entrada: permite elegir entre diccionarios y objetos."""
-
 from src.diccionarios.menu import iniciar_menu as iniciar_diccionarios
 from src.objetos.menu import iniciar_menu as iniciar_objetos
 

@@ -1,7 +1,10 @@
 from src_poo.datos.ingredientes import Ingrediente
+from src.costes_negocio.precios_ingredientes import (
+    peso_unidad_g,
+    quesos_mezcla,
+)
 
 # Lista de quesos que forman la mezcla
-quesos_mezcla = [
     "mozzarella",
     "cheddar",
     "gouda",
